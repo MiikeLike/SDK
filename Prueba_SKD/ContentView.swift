@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.white, Color.orange.opacity(1), Color.white]), startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [.white, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
@@ -25,10 +25,6 @@ struct ContentView: View {
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .padding(.bottom, 8)
-
-                Text("Sivsa")
-                    .font(.title)
-                    .foregroundColor(.gray)
 
                 Spacer()
 
@@ -71,7 +67,6 @@ struct ContentView: View {
 
                         HStack {
                             Spacer()
-
                             Toggle(isOn: $shouldSavePassword) {
                                 Text("Save Password")
                                     .font(.title3)
