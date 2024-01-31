@@ -1,8 +1,7 @@
 {
   "images" : [
     {
-      "compression-type" : "automatic",
-      "filename" : "LogoMVP.jpg",
+      "filename" : "Crea una imagen 7dc943dd-7826-4779-a4e0-40dba5277abb.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -18,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "compression-type" : "automatic"
   }
 }

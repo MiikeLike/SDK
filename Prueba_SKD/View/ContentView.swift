@@ -11,30 +11,32 @@ struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var shouldSavePassword = false
+    let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
+
 
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.blue, .white], startPoint: .center, endPoint: .bottomTrailing)
+            let colors: [Color] = [primaryColor, .gray]
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
-
+            
             VStack{
-                Image("LogoMVP")
+                Image("CarTwo")
+                
                     .resizable()
+                    .scaledToFill()
+                    .frame(width: 400, height: 450.0)
+                    //.border(Color.pink)
                     .cornerRadius(15)
-                    .frame(height: 450)
+                    .clipped()
                     .edgesIgnoringSafeArea(.top)
-                    .frame(maxWidth: .infinity)
-
-                Spacer()
 
                 Text("Welcome To App Car")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .foregroundColor(.white)
-                    .padding(.bottom, 8)
 
                 Spacer()
-
 
                 HStack {
                     Spacer()
@@ -69,14 +71,16 @@ struct ContentView: View {
                         TextField("Email Id or User Name", text: $email)
                             .padding()
                             .background(Color.white)
+                            .frame(height: 40.0)
                             .cornerRadius(5)
-                            .padding([.leading, .bottom, .trailing], 8)
+                            .padding(.all, 20.0)
 
                         SecureField("Password", text: $password)
                             .padding()
                             .background(Color.white)
+                            .frame(height: 40.0)
                             .cornerRadius(5)
-                            .padding([.leading, .bottom, .trailing], 8)
+                            .padding(.horizontal, 20.0)
 
                         HStack {
                             Spacer()
@@ -84,9 +88,10 @@ struct ContentView: View {
                                 Text("Save Password")
                                     .font(.title3)
                                     .fontWeight(.semibold)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.white)
+                                    .padding(.leading, 20.0)
                             }
-
+                            .padding(.trailing, 20.0)
                             Spacer()
                         }
                         .padding(.top, 8)
@@ -98,23 +103,17 @@ struct ContentView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
-                                .padding(.vertical, 8)
+                                .padding(.vertical, 10)
                                 .padding(.horizontal, 16)
                                 .background(Color.blue)
                                 .cornerRadius(10)
                                 .transition(.opacity)
                         }
-                        
                         Spacer()
                     }
-                    
-                    LinearGradient(colors: [.blue, .white], startPoint: .center, endPoint: .bottomTrailing)
-                        .edgesIgnoringSafeArea(.all)
-                    .cornerRadius(10)
-                    .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: 0)
                 }
             }
-            
+            // Handle image logic here
         }
     }
 }
@@ -124,3 +123,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
