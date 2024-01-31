@@ -14,16 +14,23 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(colors: [.white, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: [.blue, .gray], startPoint: .center, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
 
-            VStack {
+            VStack{
+                Image("LogoMVP")
+                    .resizable()
+                    .frame(width: 400, height: 400)
+                    .edgesIgnoringSafeArea(.all)
+                    
+
+
                 Spacer()
 
                 Text("Welcome To App Car")
                     .font(.largeTitle)
                     .fontWeight(.heavy)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .padding(.bottom, 8)
 
                 Spacer()
@@ -31,9 +38,12 @@ struct ContentView: View {
 
                 HStack {
                     Spacer()
+                        
 
                     Button(action: {
-                        self.isShowingSignUp.toggle()
+                        withAnimation {
+                            self.isShowingSignUp.toggle()
+                        }
                     }) {
                         Text("Sign up")
                             .font(.title2)
@@ -43,6 +53,7 @@ struct ContentView: View {
                             .padding(.horizontal, 16)
                             .background(Color.blue)
                             .cornerRadius(10)
+                            .transition(.slide)
                     }
 
                     Spacer()
@@ -89,6 +100,7 @@ struct ContentView: View {
                                 .padding(.horizontal, 16)
                                 .background(Color.blue)
                                 .cornerRadius(10)
+                                .transition(.opacity)
                         }
 
                         Spacer()
