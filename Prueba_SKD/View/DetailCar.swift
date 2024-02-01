@@ -9,7 +9,13 @@ import SwiftUI
 
 struct DetailCar: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("Car")
+                .resizable()
+                .edgesIgnoringSafeArea(.top)
+                .frame(width: 400, height: 500)
+                .clipped()
+        }
     }
 }
 

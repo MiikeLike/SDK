@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol LoginActionDelegate {
+    func didLoginSuccecss()
+}
+
+class LoginViewModel: ObservableObject {
+    var loginDelegate: LoginActionDelegate?
+    
+    func login() {
+        loginDelegate?.didLoginSuccecss()
+    }
+}

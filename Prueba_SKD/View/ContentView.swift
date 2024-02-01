@@ -7,12 +7,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var isShowingSignUp = false
     @State private var email = ""
     @State private var password = ""
     @State private var shouldSavePassword = false
     let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
-
+    @StateObject private var viewModel = LoginViewModel()
+    @State private var isShowingDetailCar = false
 
     var body: some View {
         ZStack {
@@ -20,13 +22,11 @@ struct ContentView: View {
             LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack{
+            VStack {
                 Image("CarTwo")
-                
                     .resizable()
                     .scaledToFill()
                     .frame(width: 400, height: 450.0)
-                    //.border(Color.pink)
                     .cornerRadius(15)
                     .clipped()
                     .edgesIgnoringSafeArea(.top)
@@ -40,7 +40,6 @@ struct ContentView: View {
 
                 HStack {
                     Spacer()
-                        
 
                     Button(action: {
                         withAnimation {
@@ -63,11 +62,9 @@ struct ContentView: View {
                 .padding(.top, 8)
 
                 Spacer()
-     
+
                 if isShowingSignUp {
-                    
                     VStack {
-                        
                         TextField("Email Id or User Name", text: $email)
                             .textContentType(.emailAddress)
                             .keyboardType(.emailAddress)
@@ -97,9 +94,9 @@ struct ContentView: View {
                             Spacer()
                         }
                         .padding(.top, 8)
-                        
+
                         Button(action: {
-                            // Handle sign up logic here
+                            viewModel.login()
                         }) {
                             Text("Login")
                                 .font(.title2)
@@ -111,12 +108,24 @@ struct ContentView: View {
                                 .cornerRadius(10)
                                 .transition(.opacity)
                         }
-                        Spacer()
+                        .padding(.top, 8)
+                        .sheet(isPresented: $isShowingDetailCar) {
+                            DetailCar()
+                        }
                     }
+                    .padding()
                 }
             }
-            // Handle image logic here
         }
+        .onAppear {
+            viewModel.loginDelegate = self
+        }
+    }
+}
+
+extension ContentView: LoginActionDelegate {
+    func didLoginSuccecss() {
+        isShowingDetailCar = true
     }
 }
 
