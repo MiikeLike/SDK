@@ -69,18 +69,20 @@ struct ContentView: View {
                     VStack {
                         
                         TextField("Email Id or User Name", text: $email)
+                            .textContentType(.emailAddress)
+                            .keyboardType(.emailAddress)
                             .padding()
                             .background(Color.white)
-                            .frame(height: 40.0)
-                            .cornerRadius(5)
-                            .padding(.all, 20.0)
+                            .frame(height: 50)
+                            .cornerRadius(30)
+                            .padding(.all, 20)
 
                         SecureField("Password", text: $password)
                             .padding()
                             .background(Color.white)
-                            .frame(height: 40.0)
-                            .cornerRadius(5)
-                            .padding(.horizontal, 20.0)
+                            .frame(height: 50)
+                            .cornerRadius(30)
+                            .padding(.horizontal, 20)
 
                         HStack {
                             Spacer()
@@ -89,9 +91,9 @@ struct ContentView: View {
                                     .font(.title3)
                                     .fontWeight(.semibold)
                                     .foregroundColor(.white)
-                                    .padding(.leading, 20.0)
+                                    .padding(.leading, 20)
                             }
-                            .padding(.trailing, 20.0)
+                            .padding(.trailing, 20)
                             Spacer()
                         }
                         .padding(.top, 8)
