@@ -72,7 +72,7 @@ struct ContentView: View {
                             .background(Color.white)
                             .frame(height: 50)
                             .cornerRadius(30)
-                            .padding(.all, 20)
+                            .padding([.leading, .bottom, .trailing], 20)
 
                         SecureField("Password", text: $password)
                             .padding()
@@ -108,7 +108,6 @@ struct ContentView: View {
                                 .cornerRadius(10)
                                 .transition(.opacity)
                         }
-                        .padding(.top, 8)
                         .sheet(isPresented: $isShowingDetailCar) {
                             DetailCar()
                         }
