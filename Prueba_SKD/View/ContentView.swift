@@ -108,7 +108,7 @@ struct ContentView: View {
                                 .cornerRadius(10)
                                 .transition(.opacity)
                         }
-                        .sheet(isPresented: $isShowingDetailCar) {
+                        .fullScreenCover(isPresented: $isShowingDetailCar) {
                             DetailCar()
                         }
                     }

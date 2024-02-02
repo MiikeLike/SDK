@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct DetailCar: View {
+    let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
+    
     var body: some View {
-        VStack{
-            Image("Car")
-                .resizable()
-                .edgesIgnoringSafeArea(.top)
-                .frame(width: 400, height: 500)
-                .clipped()
+        ZStack{
+            let colors: [Color] = [primaryColor, .gray]
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
+                .border(Color.yellow)
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                
+            }
         }
     }
 }
