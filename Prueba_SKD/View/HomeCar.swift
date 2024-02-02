@@ -31,6 +31,7 @@ struct HomeCar: View {
                     }
             }
             .accentColor(.white)
+            //
         }
     }
     
