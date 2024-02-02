@@ -13,25 +13,34 @@ struct HomeCar: View {
     var body: some View {
         
         ZStack{
-            TabView {
-                ButtonTab()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Inicio")
-                    }
-                ButtonTab()
-                    .tabItem {
-                        Image(systemName: "car.front.waves.down")
-                        Text("Vehículo")
-                    }
-                ButtonTab()
-                    .tabItem {
-                        Image(systemName: "suv.side.front.open")
-                        Text("Mantenimiento")
-                    }
+            let colors: [Color] = [primaryColor, .gray]
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                Image("Car")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: 350)
+                TabView {
+                    ButtonTab()
+                        .tabItem {
+                            Image(systemName: "house.fill")
+                            Text("Inicio")
+                        }
+                    ButtonTab()
+                        .tabItem {
+                            Image(systemName: "car.front.waves.down")
+                            Text("Vehículo")
+                        }
+                    ButtonTab()
+                        .tabItem {
+                            Image(systemName: "suv.side.front.open")
+                            Text("Mantenimiento")
+                        }
+                }
+                .accentColor(.white)
+                //
             }
-            .accentColor(.white)
-            //
         }
     }
     
@@ -42,10 +51,6 @@ struct HomeCar: View {
                 let colors: [Color] = [primaryColor, .gray]
                 LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                VStack{
-                    
-                }
-
             }
         }
     }
