@@ -109,7 +109,7 @@ struct ContentView: View {
                                 .transition(.opacity)
                         }
                         .fullScreenCover(isPresented: $isShowingDetailCar) {
-                            DetailCar()
+                            HomeCar()
                         }
                     }
                     .padding()

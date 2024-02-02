@@ -12,7 +12,7 @@
 		6EA474842B6981E90081D7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA474832B6981E90081D7DD /* Assets.xcassets */; };
 		6EA474872B6981E90081D7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EA474862B6981E90081D7DD /* Preview Assets.xcassets */; };
 		6EA474902B6A366A0081D7DD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4748F2B6A366A0081D7DD /* ViewModel.swift */; };
-		6EA474922B6A36760081D7DD /* DetailCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA474912B6A36760081D7DD /* DetailCar.swift */; };
+		6EA474922B6A36760081D7DD /* HomeCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA474912B6A36760081D7DD /* HomeCar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		6EA474832B6981E90081D7DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EA474862B6981E90081D7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6EA4748F2B6A366A0081D7DD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		6EA474912B6A36760081D7DD /* DetailCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCar.swift; sourceTree = "<group>"; };
+		6EA474912B6A36760081D7DD /* HomeCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				6EA474812B6981E80081D7DD /* ContentView.swift */,
-				6EA474912B6A36760081D7DD /* DetailCar.swift */,
+				6EA474912B6A36760081D7DD /* HomeCar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 				6EA474822B6981E80081D7DD /* ContentView.swift in Sources */,
 				6EA474902B6A366A0081D7DD /* ViewModel.swift in Sources */,
 				6EA474802B6981E80081D7DD /* Prueba_SKDApp.swift in Sources */,
-				6EA474922B6A36760081D7DD /* DetailCar.swift in Sources */,
+				6EA474922B6A36760081D7DD /* HomeCar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
