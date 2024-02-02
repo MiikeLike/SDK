@@ -33,10 +33,9 @@ struct HomeCar: View {
                 Image("Car")
                     .resizable()
                     .edgesIgnoringSafeArea(.top)
-                    .frame(height: 350)
-                Map(coordinateRegion: $coordinateRegion, showsUserLocation: true)
-                    .edgesIgnoringSafeArea(.bottom)
                     .frame(height: 300)
+                Map(coordinateRegion: $coordinateRegion, showsUserLocation: true)
+                    .frame(height: 280)
                 TabView {
                     ButtonTab()
                         .tabItem {
@@ -45,7 +44,7 @@ struct HomeCar: View {
                         }
                     ButtonTab()
                         .tabItem {
-                            Image(systemName: "car.front.waves.down")
+                            Image(systemName: "car.front.waves.up.fill")
                             Text("Vehículo")
                         }
                     ButtonTab()
@@ -55,7 +54,6 @@ struct HomeCar: View {
                         }
                 }
                 .accentColor(.white)
-                //
             }
         }
     }
@@ -66,7 +64,7 @@ struct HomeCar: View {
             VStack {
                 let colors: [Color] = [primaryColor, .gray]
                 LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
+                    .aspectRatio(contentMode: .fill)
             }
         }
     }
