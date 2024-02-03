@@ -96,6 +96,7 @@ struct ContentView: View {
 
                         Button(action: {
                             viewModel.login()
+                            let impact = UIImpactFeedbackGenerator(style: .medium)
                         }) {
                             Text("Login")
                                 .font(.title2)

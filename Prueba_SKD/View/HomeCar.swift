@@ -39,22 +39,27 @@ struct HomeCar: View {
                     .cornerRadius(20)
                 
                 Label("Su coche está aparcado aquí", systemImage: "mappin.and.ellipse")
+                    .foregroundColor(.white)
+                
                 
                 TabView {
                     ButtonTab()
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Inicio")
+                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                     ButtonTab()
                         .tabItem {
                             Image(systemName: "car.front.waves.up.fill")
                             Text("Vehículo")
+                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                     ButtonTab()
                         .tabItem {
                             Image(systemName: "suv.side.front.open")
                             Text("Mantenimiento")
+                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                 }
                 .accentColor(.white)
