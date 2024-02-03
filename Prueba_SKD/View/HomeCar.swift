@@ -47,19 +47,16 @@ struct HomeCar: View {
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Inicio")
-                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                     ButtonTab()
                         .tabItem {
                             Image(systemName: "car.front.waves.up.fill")
                             Text("Vehículo")
-                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                     ButtonTab()
                         .tabItem {
                             Image(systemName: "suv.side.front.open")
                             Text("Mantenimiento")
-                            let impact = UIImpactFeedbackGenerator(style: .light)
                         }
                 }
                 .accentColor(.white)
