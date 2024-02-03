@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var shouldSavePassword = false
-    let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
     @StateObject private var viewModel = LoginViewModel()
     @State private var isShowingDetailCar = false
 

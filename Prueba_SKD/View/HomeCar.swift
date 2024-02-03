@@ -8,19 +8,18 @@
 import SwiftUI
 import MapKit
 
+let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
+
 struct HomeCar: View {
-    let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
     
     //MARK: Map
     private struct DefaultRegion {
         static let latitude = 9.9333
         static let longitude = -84.0833
     }
-    
     private struct Span {
         static let delta = 0.1
     }
-    
     @State var coordinateRegion: MKCoordinateRegion = .init(center: .init(latitude: DefaultRegion.latitude, longitude: DefaultRegion.longitude), span: .init(latitudeDelta: Span.delta, longitudeDelta: Span.delta))
     
     
@@ -28,14 +27,19 @@ struct HomeCar: View {
         ZStack{
             let colors: [Color] = [primaryColor, .gray]
             LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.all)
             VStack{
                 Image("Car")
                     .resizable()
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 300)
+                
                 Map(coordinateRegion: $coordinateRegion, showsUserLocation: true)
-                    .frame(height: 280)
+                    .frame(width: 380, height: 360)
+                    .cornerRadius(20)
+                
+                Label("Su coche está aparcado aquí", systemImage: "mappin.and.ellipse")
+                
                 TabView {
                     ButtonTab()
                         .tabItem {
@@ -54,16 +58,17 @@ struct HomeCar: View {
                         }
                 }
                 .accentColor(.white)
+                .edgesIgnoringSafeArea(.bottom)
             }
         }
+        
     }
     
     struct ButtonTab: View {
         var body: some View {
-            let primaryColor = Color(#colorLiteral(red: 0, green: 0, blue: 0.2588235294117647, alpha: 1))
             VStack {
                 let colors: [Color] = [primaryColor, .gray]
-                LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom)
                     .aspectRatio(contentMode: .fill)
             }
         }
