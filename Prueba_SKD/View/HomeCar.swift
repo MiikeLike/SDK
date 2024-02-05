@@ -43,35 +43,27 @@ struct HomeCar: View {
                 
                 
                 TabView {
-                    ButtonTab()
-                        .tabItem {
-                            Image(systemName: "house.fill")
-                            Text("Inicio")
-                        }
-                    ButtonTab()
-                        .tabItem {
-                            Image(systemName: "car.front.waves.up.fill")
-                            Text("Vehículo")
-                        }
-                    ButtonTab()
-                        .tabItem {
-                            Image(systemName: "suv.side.front.open")
-                            Text("Mantenimiento")
-                        }
+                    NavigationLink(destination: HomeCar()) {
+                    }
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Inicio")
+                    }
+                    
+                    NavigationLink(destination: CarView()) {
+                    }
+                    .tabItem {
+                        Image(systemName: "car.front.waves.up.fill")
+                        Text("Vehículo")
+                    }
+                    
+                    NavigationLink(destination: Maintenance()) {
+                    }
+                    .tabItem {
+                        Image(systemName: "suv.side.front.open")
+                        Text("Mantenimiento")
+                    }
                 }
-                .accentColor(.white)
-                .edgesIgnoringSafeArea(.bottom)
-            }
-        }
-        
-    }
-    
-    struct ButtonTab: View {
-        var body: some View {
-            VStack {
-                let colors: [Color] = [primaryColor, .gray]
-                LinearGradient(gradient: Gradient(colors: colors), startPoint: .top, endPoint: .bottom)
-                    .aspectRatio(contentMode: .fill)
             }
         }
     }
