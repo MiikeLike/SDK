@@ -9,7 +9,14 @@ import SwiftUI
 
 struct CarView: View {
     var body: some View {
-        Text("View de Vehículo")
+        VStack{
+            let colors: [Color] = [primaryColor, .gray]
+            LinearGradient(gradient: Gradient(colors: colors), startPoint: .center, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                
+            }
+        }
     }
 }
 

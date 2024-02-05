@@ -31,43 +31,23 @@ struct HomeCar: View {
             VStack{
                 Image("Car")
                     .resizable()
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: 300)
-                
-                Map(coordinateRegion: $coordinateRegion, showsUserLocation: true)
-                    .frame(width: 380, height: 360)
-                    .cornerRadius(20)
-                
-                Label("Su coche está aparcado aquí", systemImage: "mappin.and.ellipse")
-                    .foregroundColor(.white)
-                
-                
-                TabView {
-                    NavigationLink(destination: HomeCar()) {
-                    }
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("Inicio")
-                    }
+                    //.frame(height: 340)
+                VStack{
+                    Map(coordinateRegion: $coordinateRegion, interactionModes: .all, showsUserLocation: true, userTrackingMode: .constant(.none))
+                        .padding(.top, 0)
+                        .frame(height: 370)
+                        .cornerRadius(20)
                     
-                    NavigationLink(destination: CarView()) {
-                    }
-                    .tabItem {
-                        Image(systemName: "car.front.waves.up.fill")
-                        Text("Vehículo")
-                    }
-                    
-                    NavigationLink(destination: Maintenance()) {
-                    }
-                    .tabItem {
-                        Image(systemName: "suv.side.front.open")
-                        Text("Mantenimiento")
-                    }
+                    Label("Su coche está aparcado aquí", systemImage: "mappin.and.ellipse")
+                        .foregroundColor(.white)
+                        .padding(.top, 0)
                 }
             }
+            .edgesIgnoringSafeArea(.top)
         }
     }
 }
+
 
 
 #Preview {

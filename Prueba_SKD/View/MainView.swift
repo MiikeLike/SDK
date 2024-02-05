@@ -9,11 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
+        
         TabView{
+
             HomeCar().tabItem {
                 Label("Inicio", systemImage: "house.fill")
             }
-            
             CarView().tabItem {
                 Label("Vehículo", systemImage: "car.front.waves.up.fill")
             }
